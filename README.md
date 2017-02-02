@@ -30,6 +30,6 @@ Overview of the whole system
 ## Author
 * [kirkovg] (https://github.com/kirkovg)
 
-## Acknowledgments
+## Acknowledgements
 * [latkoski] (https://github.com/latkoski) - much needed help with the web design
 
