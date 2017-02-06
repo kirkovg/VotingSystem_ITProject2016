@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -91,6 +91,7 @@ public partial class admin_pages_UpdateRemoveElection : System.Web.UI.Page
 
         // call to delete all foreign keys in Participations
         deleteFromParticipations(electionId);
+        deleteFromVotingInfo(electionId);
 
         command.Parameters.AddWithValue("@ID", electionId);
         int status = 0;
@@ -127,6 +128,34 @@ public partial class admin_pages_UpdateRemoveElection : System.Web.UI.Page
         SqlConnection conn = new SqlConnection();
         conn.ConnectionString = ConfigurationManager.ConnectionStrings["DBVoteXConn"].ConnectionString;
         string sqlString = "DELETE FROM Participations WHERE ElectionID=@ElectionID";
+        SqlCommand command = new SqlCommand(sqlString, conn);
+
+        command.Parameters.AddWithValue("@ElectionID", electionId);
+
+        try
+        {
+            conn.Open();
+            command.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblMessage.Text = err.Message;
+        }
+        finally
+        {
+            conn.Close();
+        }
+    }
+
+    /// <summary>
+    ///  deletes first the foreign keys of ElectionID in VotingInfo because of FK constraints
+    /// </summary>
+    /// <param name="electionId"></param>
+    protected void deleteFromVotingInfo(int electionId)
+    {
+        SqlConnection conn = new SqlConnection();
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["DBVoteXConn"].ConnectionString;
+        string sqlString = "DELETE FROM VotingInfo WHERE ElectionID=@ElectionID";
         SqlCommand command = new SqlCommand(sqlString, conn);
 
         command.Parameters.AddWithValue("@ElectionID", electionId);
