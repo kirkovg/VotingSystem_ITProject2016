@@ -1,1 +1,6 @@
-uploading database files 
+To connect locally
+-> copy the mdf and ldf files to sql server
+-> open SSMS
+-> right click databases
+-> add -> attach -> attach the .mdf file
+-> you are done!
