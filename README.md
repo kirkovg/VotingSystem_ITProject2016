@@ -2,9 +2,9 @@
 Project done for the course Internet Technologies @ FCSE
 
 ## Built With
-* [ASP.NET Web Forms] (https://www.asp.net/web-forms) - used for the backend/frontend
-* [Bootstrap] (http://getbootstrap.com/) - for the responsive design
-* [SQL Server Managment Studio] (https://msdn.microsoft.com/en-us/library/hh213248.aspx) - for creating the database
+* [ASP.NET Web Forms](https://www.asp.net/web-forms) - used for the backend/frontend
+* [Bootstrap](http://getbootstrap.com/) - for the responsive design
+* [SQL Server Managment Studio](https://msdn.microsoft.com/en-us/library/hh213248.aspx) - for creating the database
 
 ## Overview
 There are three types of roles:
@@ -28,8 +28,8 @@ Overview of the whole system
 * Browse through the election statistics
 
 ## Author
-* [kirkovg] (https://github.com/kirkovg)
+* [kirkovg](https://github.com/kirkovg)
 
 ## Acknowledgements
-* [latkoski] (https://github.com/latkoski) - much needed help with the web design
+* [latkoski](https://github.com/latkoski) - much needed help with the web design
 
